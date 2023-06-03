@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/SAN/OneDrive/Desktop/javascript/todo-list.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Todo List</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <title>Todo List by Ranjit Chaurasiya</title>
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+background:linear-gradient(to right,yellow,red,cyan);
+text-align:center;
+justify-content:center;
+align-items:center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#todo-container {
+  margin-top: 20px;
+}
+
+#todo-input {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#add-button {
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+#todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-item label {
+  font-size: 16px;
+}
+#work-list li{
+text-align:center;
+}
+
+</style>
+</head>
+<body>
+  
+
+
+
+<h1>Todo List by Ranjit Chaurasiya<h1>
+
+  
+  <div id="todo-container">
+    <h2>Personal Tasks</h2>
+    <input type="text" id="todo-input" placeholder="Enter a task...">
+    <button id="add-button">Add Task</button>
+    <ul id="todo-list"><li class="todo-item"><input type="checkbox"><label>My Name Ranjit Chaurasiya</label></li><li class="todo-item"><input type="checkbox"><label>I am from Gorakhpur</label></li><li class="todo-item"><input type="checkbox"><label>My graduation is complete</label></li><li class="todo-item"><input type="checkbox"><label>I am Frontend developer</label></li></ul>
+  </div>
+  
+  <div id="work-container">
+    <h2>Work Tasks</h2>
+    <input type="text" id="work-input" placeholder="Enter a task...">
+    <button id="work-button">Add Task</button>
+    <ul id="work-list"><li class="todo-item"><input type="checkbox"><label>My Website Links</label></li><li class="todo-item"><input type="checkbox"><label>https://ranjit1234567890.github.io/neweecommerce</label></li><li class="todo-item"><input type="checkbox"><label>https://ranjit1234567890.github.io/design/</label></li><li class="todo-item"><input type="checkbox"><label>https://ranjit1234567890.github.io/toursandtravels/</label></li><li class="todo-item"><input type="checkbox"><label>https://ranjit1234567890.github.io/pizza.com/</label></li><li class="todo-item"><input type="checkbox"><label>https://ranjit1234567890.github.io/newresponsivewebsite/index.html</label></li><li class="todo-item"><input type="checkbox"><label>https://ranjit1234567890.github.io/newwebsite/</label></li><li class="todo-item"><input type="checkbox"><label>https://ranjit1234567890.github.io/calculator/</label></li></ul>
+  </div>
+  
+
+
+
+  <script>
+
+const addButton = document.getElementById('add-button');
+const todoInput = document.getElementById('todo-input');
+const todoList = document.getElementById('todo-list');
+
+const workButton = document.getElementById('work-button');
+const workInput = document.getElementById('work-input');
+const workList = document.getElementById('work-list');
+
+addButton.addEventListener('click', addTask);
+workButton.addEventListener('click', addWorkTask);
+
+function addTask() {
+  const taskText = todoInput.value.trim();
+
+  if (taskText !== '') {
+    const todoItem = document.createElement('li');
+    todoItem.classList.add('todo-item');
+
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+
+    const label = document.createElement('label');
+    label.textContent = taskText;
+
+    todoItem.appendChild(checkbox);
+    todoItem.appendChild(label);
+    todoList.appendChild(todoItem);
+
+    todoInput.value = '';
+  }
+}
+
+function addWorkTask() {
+  const taskText = workInput.value.trim();
+
+  if (taskText !== '') {
+    const workItem = document.createElement('li');
+    workItem.classList.add('todo-item');
+
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+
+    const label = document.createElement('label');
+    label.textContent = taskText;
+
+    workItem.appendChild(checkbox);
+    workItem.appendChild(label);
+    workList.appendChild(workItem);
+
+    workInput.value = '';
+  }
+}
+
+
+
+
+</script>
+
+
+</body></html>
